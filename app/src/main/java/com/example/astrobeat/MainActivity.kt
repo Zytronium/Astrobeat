@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
         }
-    } //test
+    }
 
     private fun animate(target: View, prprty: Property<View, Float>, from: Float, to: Float, dur: Long) {
         val animator = ObjectAnimator.ofFloat(target, prprty, from, to)

@@ -16,8 +16,6 @@
 local.properties
 
 # Project exclude paths
-/app/
-/gradle/
 /.idea/.gitignore
 /.idea/appInsightsSettings.xml
 /.idea/compiler.xml
@@ -28,3 +26,5 @@ local.properties
 /.idea/misc.xml
 /.idea/runConfigurations.xml
 /.idea/vcs.xml
+/.idea/kotlinc.xml
+/.idea/migrations.xml

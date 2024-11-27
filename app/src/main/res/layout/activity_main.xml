@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue_purple"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Astrobeat Player"
+        android:textColor="@color/teal_200"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:gravity="start|top"
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:chipSpacingHorizontal="1000dp"
+        app:chipSpacingVertical="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:singleLine="false">
+
+        <Button
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:onClick="playAll"
+            android:text="PLAY"
+            app:cornerRadius="20dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:hapticFeedbackEnabled="true"
+            android:paddingStart="15dp"
+            android:rotationY="8"
+            android:text="Noma - Brain Power"
+            android:textColor="@color/blue"
+            android:translationX="3dp" />
+        <!--        <Switch-->
+        <!--            android:id="@+id/switch2"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:rotationY="8"-->
+        <!--            android:paddingStart="15dp"-->
+        <!--            android:hapticFeedbackEnabled="true"-->
+        <!--            android:checked="true"-->
+        <!--            android:text="We're Finally Landing"-->
+        <!--            android:textColor="@color/blue"-->
+        <!--            android:textOff="SKIPPED"-->
+        <!--            android:textOn="PLAYING" />-->
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:hapticFeedbackEnabled="true"
+            android:rotationY="8"
+            android:text="Synthwave Danger Zone"
+            android:textColor="@color/blue"
+            android:translationX="3dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/switch3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:hapticFeedbackEnabled="true"
+            android:rotationY="8"
+            android:text="We're Finally Landing"
+            android:textColor="@color/blue"
+            android:translationX="3dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/switch4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:hapticFeedbackEnabled="true"
+            android:rotationY="8"
+            android:text="Billie Jean Instrumental"
+            android:textColor="@color/blue"
+            android:translationX="3dp" />
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/switch5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:hapticFeedbackEnabled="true"
+            android:rotationY="8"
+            android:text="On The Run"
+            android:textColor="@color/blue"
+            android:translationX="3dp" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="360dp"-->
+<!--        android:layout_height="358dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/> -->
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

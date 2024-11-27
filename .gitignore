@@ -1,6 +1,7 @@
 *.iml
 .gradle
 /local.properties
+./.idea
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -17,3 +18,13 @@ local.properties
 # Project exclude paths
 /app/
 /gradle/
+/.idea/.gitignore
+/.idea/appInsightsSettings.xml
+/.idea/compiler.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/discord.xml
+/.idea/gradle.xml
+/.idea/material_theme_project_new.xml
+/.idea/misc.xml
+/.idea/runConfigurations.xml
+/.idea/vcs.xml

@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         switches.forEach { switch: Chip ->
             switch.setOnCheckedChangeListener { chip, checked ->
                 animate(chip, View.ROTATION_Y, chip.rotationY, if(checked) 8F else -9F, 225)
-                animate(chip, View.TRANSLATION_X, chip.translationX, if(checked) 5f else -5F, 225)
+                animate(chip, View.TRANSLATION_X, chip.translationX, if(checked) 10f else -5F, 225)
             }
             /*switch.setOnDragListener { view, dragEvent ->
 

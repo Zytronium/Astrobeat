@@ -13,6 +13,8 @@
         android:layout_height="wrap_content"
         android:text="Astrobeat Player"
         android:textColor="@color/teal_200"
+        android:textStyle="bold|italic"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,21 +40,27 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:onClick="playAll"
-            android:text="PLAY"
-            app:cornerRadius="20dp" />
+            android:text="   PLAY   "
+            android:textSize="34sp"
+            android:padding="16dp"
+            app:cornerRadius="37dp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp"/>
 
         <com.google.android.material.chip.Chip
             android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:checked="true"
+            android:checked="false"
             android:hapticFeedbackEnabled="true"
             android:paddingStart="15dp"
-            android:rotationY="8"
+            android:rotationY="-9"
             android:text="Noma - Brain Power"
             android:textColor="@color/blue"
-            android:translationX="3dp" />
+            android:translationX="-3dp" />
         <!--        <Switch-->
         <!--            android:id="@+id/switch2"-->
         <!--            android:layout_width="wrap_content"-->
@@ -71,12 +79,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"
-            android:checked="true"
+            android:checked="false"
             android:hapticFeedbackEnabled="true"
-            android:rotationY="8"
+            android:rotationY="-9"
             android:text="Synthwave Danger Zone"
             android:textColor="@color/blue"
-            android:translationX="3dp" />
+            android:translationX="-3dp" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/switch3"
@@ -105,6 +113,19 @@
 
         <com.google.android.material.chip.Chip
             android:id="@+id/switch5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:hapticFeedbackEnabled="true"
+            android:rotationY="8"
+            android:text="Thelema"
+            android:textColor="@color/blue"
+            android:translationX="3dp" />
+
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/switch6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checkable="true"

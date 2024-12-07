@@ -9,17 +9,18 @@ import android.util.Property
 import android.view.View
 import android.widget.Button
 import android.widget.Switch
+import com.example.astrobeat.appState.currentMusic
+import com.example.astrobeat.appState.paused
+import com.example.astrobeat.appState.playing
 import com.google.android.material.chip.Chip
 
 class MainActivity : AppCompatActivity() {
 
     var dontSkip = false
-    var playing = false
-    var paused = false
     private var looped = true
 //    private var shufflePlay = false
 
-    private var currentMusic: MediaPlayer? =  null //MediaPlayer.create(this, R.raw.brainpower)
+//    private var currentMusic: MediaPlayer? =  null
     private var playlist: Array<MediaPlayer> = arrayOf()
     private lateinit var songlist: Array<MediaPlayer>
     private lateinit var switch1: Chip
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var switch3: Chip
     private lateinit var switch4: Chip
     private lateinit var switch5: Chip
+    private lateinit var switch6: Chip
     private lateinit var playbtn: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,25 +39,29 @@ class MainActivity : AppCompatActivity() {
         switch3 = findViewById(R.id.switch3)
         switch4 = findViewById(R.id.switch4)
         switch5 = findViewById(R.id.switch5)
+        switch6 = findViewById(R.id.switch6)
         playbtn = findViewById(R.id.play)
         songlist = arrayOf(
             MediaPlayer.create(this, R.raw.brainpower),
             MediaPlayer.create(this, R.raw.synthwavedangerzone),
             MediaPlayer.create(this, R.raw.werefinallylanding),
             MediaPlayer.create(this, R.raw.billiejeaninstrumental),
+            MediaPlayer.create(this, R.raw.thelema),
             MediaPlayer.create(this, R.raw.ontherun)
         )
-        val switches = arrayOf(switch1, switch2, switch3, switch4, switch5)
+        val switches = arrayOf(switch1, switch2, switch3, switch4, switch5, switch6)
+
+        playbtn.text = if (playing) "   PAUSE   " else "   PLAY   "
 
         switches.forEach { switch: Chip ->
-            switch.setOnCheckedChangeListener { chip, b ->
-                animate(chip, View.ROTATION_Y, chip.rotationY, if(b) 8F else -9F, 225)
-                animate(chip, View.TRANSLATION_X, chip.translationX, if(b) 5f else -5F, 225)
+            switch.setOnCheckedChangeListener { chip, checked ->
+                animate(chip, View.ROTATION_Y, chip.rotationY, if(checked) 8F else -9F, 225)
+                animate(chip, View.TRANSLATION_X, chip.translationX, if(checked) 5f else -5F, 225)
             }
-            switch.setOnDragListener { view, dragEvent ->
+            /*switch.setOnDragListener { view, dragEvent ->
 
                 true
-            }
+            }*/
         }
     }
 
@@ -67,7 +73,7 @@ class MainActivity : AppCompatActivity() {
 
     fun playAll(view: View? = null) {
         playing = !playing
-            playbtn.text = if(playing) "PAUSE" else "PLAY"
+            playbtn.text = if(playing) "   PAUSE   " else "   PLAY   "
         if(!playing) {
             paused = true
             currentMusic?.pause()
@@ -77,6 +83,7 @@ class MainActivity : AppCompatActivity() {
         if(switch3.isChecked) playlist += songlist[2]
         if(switch4.isChecked) playlist += songlist[3]
         if(switch5.isChecked) playlist += songlist[4]
+        if(switch6.isChecked) playlist += songlist[5]
 
 //        var songNumb = 0 //might not need *
         if(playing) {
